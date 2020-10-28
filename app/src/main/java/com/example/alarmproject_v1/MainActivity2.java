@@ -36,6 +36,7 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -88,7 +89,7 @@ public class MainActivity2 extends AppCompatActivity {
     public void buildRecyclerView(final ArrayList<AlarmCard> cardList, RecyclerView recyclerView) {
         Log.v(TAG, "buildRecyclerView: ");
 
-        recycler_LayoutManager = new LinearLayoutManager(this);
+        recycler_LayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(recycler_LayoutManager);
 
         alarmCard_Adapter = new AlarmCard_Adapter(cardList);
@@ -119,9 +120,15 @@ public class MainActivity2 extends AppCompatActivity {
         //create test cards v1 (placeholder strings)
         AlarmCard testCard_1 = new AlarmCard("DATE_1", "TIME_1");
         AlarmCard testCard_2 = new AlarmCard("DATE_2", "TIME_2");
+        AlarmCard testCard_3 = new AlarmCard("DATE_3", "TIME_3");
+        AlarmCard testCard_4 = new AlarmCard("DATE_4", "TIME_4");
+        AlarmCard testCard_5 = new AlarmCard("DATE_5", "TIME_5");
         //add test cards to cardList
         alarmCardList.add(testCard_1);
         alarmCardList.add(testCard_2);
+        alarmCardList.add(testCard_3);
+        alarmCardList.add(testCard_4);
+        alarmCardList.add(testCard_5);
 
         //build recyclerView using cardList
         buildRecyclerView(alarmCardList, alarmList_recycler);

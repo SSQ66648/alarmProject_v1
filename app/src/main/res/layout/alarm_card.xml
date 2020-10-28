@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
     app:cardBackgroundColor="@color/grey_light"
     app:cardCornerRadius="4dp">
 
@@ -23,6 +24,7 @@
             android:layout_marginTop="8dp"
             android:background="@color/white"
             android:padding="2dp"
+            android:src="@drawable/ic_stock_alarmclock"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,6 +44,7 @@
             app:layout_constraintTop_toTopOf="parent" />
         <!--UNDERLINE-->
         <View
+            android:id="@+id/view"
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:background="@color/black"
@@ -102,8 +105,7 @@
             android:layout_width="50dp"
             android:layout_height="60dp"
             android:layout_marginEnd="8dp"
-            android:drawableBottom="@drawable/ic_stock_delete_cross"
-            android:text="DEL"
+            android:background="@drawable/ic_stock_delete_cross"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="@+id/img_ic_alarm"
             app:layout_constraintEnd_toEndOf="parent"
@@ -284,6 +286,18 @@
             app:layout_constraintStart_toEndOf="@+id/chk_mon"
             app:layout_constraintTop_toTopOf="@+id/chk_mon"
             app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="[ALARM NAME]"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_title_alarm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/txt_title_alarm"
+            app:layout_constraintTop_toTopOf="@+id/txt_title_alarm" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
