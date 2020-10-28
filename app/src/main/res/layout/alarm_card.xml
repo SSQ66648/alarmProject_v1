@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/grey_light"
+    app:cardCornerRadius="4dp">
+
+    <!-- ========== ALARM-SET DETAIL CARD ========== -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="4dp">
+
+        <!--ICON-->
+        <ImageView
+            android:id="@+id/img_ic_alarm"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/white"
+            android:padding="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--TITLE-->
+        <TextView
+            android:id="@+id/txt_title_alarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="ALARM:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/img_ic_alarm"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--UNDERLINE-->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/txt_title_alarm"
+            app:layout_constraintStart_toStartOf="@id/txt_title_alarm"
+            app:layout_constraintTop_toBottomOf="@id/txt_title_alarm" />
+
+
+        <!--DATE-->
+        <TextView
+            android:id="@+id/txt_sub_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="DATE"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/txt_val_date"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/img_ic_alarm"
+            app:layout_constraintStart_toStartOf="@+id/txt_title_alarm"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title_alarm" />
+
+        <TextView
+            android:id="@+id/txt_val_date"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="01/01/01"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/txt_sub_date"
+            app:layout_constraintTop_toTopOf="@+id/txt_sub_date" />
+
+        <!--TIME-->
+        <TextView
+            android:id="@+id/txt_sub_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="TIME"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/txt_sub_date"
+            app:layout_constraintTop_toBottomOf="@+id/txt_sub_date" />
+
+        <TextView
+            android:id="@+id/txt_val_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/txt_val_date"
+            app:layout_constraintTop_toTopOf="@+id/txt_sub_time" />
+
+        <!--DELETE-->
+        <Button
+            android:id="@+id/btn_alarm_delete"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="8dp"
+            android:drawableBottom="@drawable/ic_stock_delete_cross"
+            android:text="DEL"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_ic_alarm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/img_ic_alarm"
+            app:layout_constraintVertical_bias="0.533" />
+
+        <!--BORDERELINE-->
+        <View
+            android:id="@+id/borderline_img_sound"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/img_ic_alarm" />
+
+
+        <!--SOUND-->
+        <TextView
+            android:id="@+id/txt_sub_sound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="SOUND"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/img_ic_alarm"
+            app:layout_constraintTop_toBottomOf="@+id/img_ic_alarm" />
+
+        <!--SOUND SELECT-->
+        <TextView
+            android:id="@+id/txt_val_audiofile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@color/white"
+            android:text="DEFAULT (NO FILE CHOSEN)"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/txt_sub_sound"
+            app:layout_constraintTop_toTopOf="@+id/txt_sub_sound" />
+
+        <Button
+            android:id="@+id/btn_select_sound"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="2dp"
+            android:text="select..."
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_val_audiofile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/txt_val_audiofile"
+            app:layout_constraintTop_toTopOf="@+id/txt_val_audiofile" />
+
+        <!--BORDERLINE-->
+        <View
+            android:id="@+id/borderline_sound_repeat"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/txt_sub_sound" />
+
+        <!--REPEAT-->
+        <!--REPEAT, FREQUENCY (tbc)-->
+        <!--REPEAT:DAYS-->
+        <TextView
+            android:id="@+id/txt_sub_repeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="REPEAT"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/img_ic_alarm"
+            app:layout_constraintTop_toBottomOf="@+id/borderline_sound_repeat" />
+
+        <CheckBox
+            android:id="@+id/chk_repeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_sub_repeat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/txt_val_audiofile"
+            app:layout_constraintTop_toTopOf="@+id/txt_sub_repeat" />
+
+        <CheckBox
+            android:id="@+id/chk_mon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:text="M"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/chk_tue"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_sub_repeat" />
+
+        <CheckBox
+            android:id="@+id/chk_wed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="W"
+            app:layout_constraintBottom_toBottomOf="@+id/chk_tue"
+            app:layout_constraintEnd_toStartOf="@+id/chk_thu"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/chk_tue"
+            app:layout_constraintTop_toTopOf="@+id/chk_tue"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <CheckBox
+            android:id="@+id/chk_thu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="Th"
+            app:layout_constraintBottom_toBottomOf="@+id/chk_wed"
+            app:layout_constraintEnd_toStartOf="@+id/chk_fri"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/chk_wed"
+            app:layout_constraintTop_toTopOf="@+id/chk_wed"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <CheckBox
+            android:id="@+id/chk_fri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="F"
+            app:layout_constraintBottom_toBottomOf="@+id/chk_thu"
+            app:layout_constraintEnd_toStartOf="@+id/chk_sat"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/chk_thu"
+            app:layout_constraintTop_toTopOf="@+id/chk_thu"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <CheckBox
+            android:id="@+id/chk_sat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="S"
+            app:layout_constraintBottom_toBottomOf="@+id/chk_fri"
+            app:layout_constraintEnd_toStartOf="@+id/chk_sun"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/chk_fri"
+            app:layout_constraintTop_toTopOf="@+id/chk_fri"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <CheckBox
+            android:id="@+id/chk_sun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Su"
+            app:layout_constraintBottom_toBottomOf="@+id/chk_sat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/chk_sat"
+            app:layout_constraintTop_toTopOf="@+id/chk_sat"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <CheckBox
+            android:id="@+id/chk_tue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="T"
+            app:layout_constraintBottom_toBottomOf="@+id/chk_mon"
+            app:layout_constraintEnd_toStartOf="@+id/chk_wed"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/chk_mon"
+            app:layout_constraintTop_toTopOf="@+id/chk_mon"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
